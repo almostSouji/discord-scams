@@ -177,3 +177,15 @@
     - type: automod
       pattern: '*invite\*'
       explanation: Nobody legitimate uses the wrong slash when posting invites. If used, at least the intent of bypassing filters can be assumed.
+
+- id: 01K0ARRPJF7HF5V4V4Y2KE1D3F
+  name: bookmarklet
+  notes:
+    - The victim is asked to drag a button/link into their bookmarks and click on it when visiting discord/steam/legitimate page. Doing so executes embedded scripts and will usually result in account takeover.
+    - 'This scam uses [bookmarklets](<https://en.wikipedia.org/wiki/Bookmarklet>), bookmarks with embedded javascript.'
+    - On inspection, the link will be very long and look very suspicious with URL encoded embedded scripts.
+  images:
+    - path: ./images/bookmarklet-1.png
+      alt: Screenshot showing a link posted by a reputable bot through abusing its custom message feature leading to a fake verification page. Below, a scammer explains the procedure of dragging the button to the bookmark bar and activating it while visiting discord.
+    - path: ./images/bookmarklet-2.png
+      alt: The bookmarklet link (a very long, suspicious looking link with URL encoded characters).
