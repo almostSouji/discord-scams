@@ -189,3 +189,18 @@
       alt: Screenshot showing a link posted by a reputable bot through abusing its custom message feature leading to a fake verification page. Below, a scammer explains the procedure of dragging the button to the bookmark bar and activating it while visiting discord.
     - path: ./images/bookmarklet-2.png
       alt: The bookmarklet link (a very long, suspicious looking link with URL encoded characters).
+
+- id: 01K0BY134G66MZC3AWT34CQ3Y7
+  name: accidental report
+  notes:
+    - Victim is made to believe that their account was accidentally reported and told to reach out to a scammer impersonating support staff to resolve the issue. If followed, this will usually result in account takeover by convincing the victim to change their email address associated to the account to a scammer-controlled address.
+    - Variants exist where scammers ask for payment to resolve the report instead
+    - The scam is often accompanied by faked screenshots of reports, emails, certificates (built from information obtained from employee linkedin profiles)
+    - Steam or other service variants are less common but also possible
+  images:
+    - path: ./images/accidental-report-1.png
+      alt: Screenshot showing a fake report update email and the initial attacker story of allegedly accidentally spam reporting the victim
+    - path: ./images/accidental-report-2.png
+      alt: Screenshot of the discord profile of a scammer impersonating discord staff stating they are a "report assistant"
+    - path: ./images/accidental-report-3.png
+      alt: Screenshot showing a fake accidental report for activities along with a customized request update email asking to contact a scammer impersonating staff
