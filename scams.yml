@@ -204,3 +204,21 @@
       alt: Screenshot of the discord profile of a scammer impersonating discord staff stating they are a "report assistant"
     - path: ./images/accidental-report-3.png
       alt: Screenshot showing a fake accidental report for activities along with a customized request update email asking to contact a scammer impersonating staff
+
+- id: 01K0CBXYB0DK999W3B9BMT1W7K
+  name: freeware
+  detection:
+    - pattern: tradingview premium
+      type: automod
+      explanation: Tradingview Premium is the most common target for this scam. In most communities not centered around investment, blocking this should have minimal impact on day-to-day conversations.
+  notes:
+    - Scammer posts a link to an external source (usually reddit) including download links and fake feedback/support conversations. The download includes [RAT](<https://en.wikipedia.org/wiki/Remote_desktop_software#RAT>)s or info stealers.
+    - This scam usually targets crypto and trading software impersonation.
+  examples:
+    -  'TradingView Premium Full Free version (Windows + MacOs): https://www.reddit.com/r/---/comments/---/'
+  images:
+    - path: ./images/freeware-1.png
+      alt: Screenshot of a reddit post showing the downloag to alleged free version of software
+    - path: ./images/freeware-2.png
+      alt: Screenshot of the reddit support and feedback thread trying to make the download look more legit
+
