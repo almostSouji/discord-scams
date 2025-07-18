@@ -222,3 +222,16 @@
     - path: ./images/freeware-2.png
       alt: Screenshot of the reddit support and feedback thread trying to make the download look more legit
 
+- id: 01K0EERJADFE7P3454JD1TPDR9
+  name: help to earn
+  notes:
+    - Scammer promises to help the victim earn large amounts of money in a short timeframe for taking a low cut. Usually this will result in the scammer asking the victim to transfer money into some account they have agency over and the scammer eventually withdrawing the money and ghosting the victim.
+    - Usually tries to lure the victim to a direct message on a more anonymous service like telegram
+  examples:
+    - |- 
+      I'll help the first 10 people interested on how to  start earning $100k or more within a week, but you will reimburse me 10% of your profits when you receive it. Note: only interested people should send a friend request or send me a dm! ask me (HOW) via Telegram username @---
+
+      Or The telegram link in my bio
+    - |-
+      I'll help anyone interested in how to earn $30k within 3 days and hours but you will reimburse me 10% of your dividend when you collect it. Note: only interested people should send a friend request
+
