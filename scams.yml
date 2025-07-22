@@ -33,8 +33,11 @@
   name: crypto giveaway
   detection:
     - type: regex
-      pattern: (?:(?:[1-5]|image)\.(?:jpg|png)[\s\S]*){3,}
+      pattern: (?:(?:[1-5]|image)\.(?:jpg|png)[\s\S]*){2,}
       explanation: Naming images 1/2/3/4/5.png or image.png is very uncommon. False positives may still happen in messages with image links, where the image hash ends with 1/2/3/4/5.
+    - type: automod
+      pattern: '*betfeeq*'
+      explanation: New variants include a link to a website instead of just referencing it in the screenshots.
   notes:
     - A message (often just with images) showing faked news articles about crypto casino giveaways, early mints or similar as well as faked proof of receiving credit in a crypto wallet.
     - Variants with different stories and influencers as well as different looks for the fake casino exist.
