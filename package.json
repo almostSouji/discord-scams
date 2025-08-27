@@ -1,0 +1,41 @@
+{
+	"name": "discord-scams",
+	"private": true,
+	"version": "0.0.0",
+	"description": "",
+	"contributors": [
+		"Souji <timoqueezle@gmail.com>"
+	],
+	"author": "Souji <timoqueezle@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"validate": "yarn node dist/validate.js",
+		"build:clean": "del-cli dist",
+		"build:check": "tsc --noEmit",
+		"build": "yarn build:clean && yarn build:check && tsc",
+		"format": "yarn exec biome format --write",
+		"fmt": "yarn format",
+		"prepare": "husky"
+	},
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "2.2.0",
+		"@types/node": "^24.3.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.1.5",
+		"typescript": "^5.9.2"
+	},
+	"dependencies": {
+		"kleur": "^4.1.5",
+		"yaml": "^2.8.1"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"packageManager": "yarn@4.9.2",
+	"lint-staged": {
+		"*": [
+			"biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"
+		]
+	}
+}
