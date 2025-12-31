@@ -1,0 +1,12 @@
+id: 01K04CCVPRFS5WVTAJPVXBA6MD
+name: support server
+examples:
+  - |-
+    🔗💬 For clarification or guidance, consult the team directly☞
+    <discord:/#@​​%64%69%73%63%6F%72%64%2E%67%67/%76%53%39%37%38%71%79%76%4B%74\>
+
+    ===================================================@​​.adambek#0
+notes:
+  - ~~Link using html encoding which parses to an invite in the viewing client.~~
+  - The linked server usually features a support ticket bot and can be used for different followup scams (like crypto wallet draining, demanding payment, threats and account takeovers)
+deprecation: Discord has changed the parsing engine and no longer accepts %-encoding in links, meaning they are not resolved and not clickable.

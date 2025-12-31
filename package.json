@@ -9,33 +9,29 @@
 	"author": "Souji <timoqueezle@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"validate": "yarn node dist/validate.js",
+		"validate": "pnpm build && pnpm node dist/validate.js",
+		"new": "pnpm build && pnpm node dist/new.js",
 		"build:clean": "del-cli dist",
 		"build:check": "tsc --noEmit",
-		"build": "yarn build:clean && yarn build:check && tsc",
-		"format": "yarn exec biome format --write",
-		"fmt": "yarn format",
-		"prepare": "husky"
+		"build": "pnpm build:clean && pnpm build:check && tsc",
+		"prepare": "is-ci || husky install"
 	},
 	"type": "module",
 	"devDependencies": {
-		"@biomejs/biome": "2.2.0",
 		"@types/node": "^24.3.0",
+		"biome": "^0.3.3",
+		"del-cli": "^6.0.0",
 		"husky": "^9.1.7",
-		"lint-staged": "^16.1.5",
-		"typescript": "^5.9.2"
+		"typescript": "^5.8.3"
 	},
 	"dependencies": {
 		"kleur": "^4.1.5",
-		"yaml": "^2.8.1"
+		"readdirp": "^5.0.0",
+		"ulid": "^3.0.2",
+		"yaml": "^2.8.1",
+		"zod": "^4.3.2"
 	},
 	"engines": {
 		"node": ">=20.0.0"
-	},
-	"packageManager": "yarn@4.9.2",
-	"lint-staged": {
-		"*": [
-			"biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"
-		]
 	}
 }

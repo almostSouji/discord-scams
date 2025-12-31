@@ -1,0 +1,23 @@
+id: 01K04CCVPRA719P170YZW3D28B
+name: crypto giveaway
+detection:
+  - type: regex
+    pattern: (?:(?:[1-5]|image)\.(?:jpg|png)[\s\S]*){2,}
+    explanation: Naming images 1/2/3/4/5.png or image.png is very uncommon. False positives may still happen in messages with image links, where the image hash ends with 1/2/3/4/5.
+  - type: automod
+    pattern: '*betfeeq*'
+    explanation: New variants include a link to a website instead of just referencing it in the screenshots.
+notes:
+  - A message (often just with images) showing faked news articles about crypto casino giveaways, early mints or similar as well as faked proof of receiving credit in a crypto wallet.
+  - Variants with different stories and influencers as well as different looks for the fake casino exist.
+images:
+  - path: ./images/fake-giveaway-1.png
+    alt: picture of a screen showing a faked twitter post by alleged mr beast (youtuber) about launching their own crypto casino giving away 2,500$ to everyone registering
+  - path: ./images/fake-giveaway-2.png
+    alt: picture of a screen showing "activate code" screen of a crypto casino
+  - path: ./images/fake-giveaway-3.png
+    alt: picture of a screen showing "successful withdrawal" pop-up with the crypto casino visible in the background
+  - path: ./images/fake-giveaway-4.png
+    alt: picture of a "successful withdrawal" pop-up with a phone screen showing the alleged payment in a crypto wallet
+  - path: ./images/fake-giveaway-5.png
+    alt: picture of a fake BBC article about a new challenge with a promo code to claim 4,000$ cash

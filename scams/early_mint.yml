@@ -1,0 +1,17 @@
+id: 01K04CCVPRC7VTV9XHQJ21KG0V
+name: early mint
+examples:
+  - |-
+    Minting has officially Begun Early🏆🏆
+
+    We have formally decided as a team to allow individual to mint today (<url>)🚀🎊 @everyone @here Instead of doing whitelists we decides to give people who are online during this time the ability to mint 🎁
+  - https://openseasvxe.vercel.app
+notes:
+  - A message enticing victims to follow a link to a fake crypto exchange. Following the displayed instructions results in the used wallet being drained.
+  - 'Common target: OpenSea'
+images:
+  - path: ./images/early-mint-1.png
+    alt: screenshot of a fake OpenSea website clone instructing the victim to connect a wallet
+detection:
+  - type: automod-profile
+    pattern: '*announcement*'

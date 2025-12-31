@@ -1,1 +1,2 @@
-yarn test
+pnpm validate
+git add scams.yml

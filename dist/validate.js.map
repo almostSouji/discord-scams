@@ -1,1 +1,0 @@
-{"version":3,"file":"validate.js","sourceRoot":"","sources":["../src/validate.ts"],"names":[],"mappings":"AAAA,MAAM,IAAI,GAAG,MAAM,QAAQ,CAAC","sourcesContent":["const file = await readFile;\n"]}

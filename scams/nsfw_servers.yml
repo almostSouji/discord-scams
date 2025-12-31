@@ -1,0 +1,29 @@
+id: 01K04CCVPR7W1HMFNKJPPYFSRN
+name: nsfw servers
+examples:
+  - |-
+    🔞𝗙𝗿𝗲𝗲 𝗻𝘂𝗱𝗲𝘀 𝗳𝗼𝗿 𝘆𝗼𝘂:
+    https://discord.gg/abcdefg
+    @everyone @everyone
+  - |-
+    Free 18+ Teen Content + Latina Nudes + Hentai + Onlyfans leaks 🔞🍒
+    https://discord.gg/abcdefg @everyone
+  - |-
+    Join for the best NSFW content and teen leaks 🍑👇
+    https://discord.gg/TeeN-leakz @everyone
+notes:
+  - Invite to a NSFW community. The linked server has a fake verification flow including a visual clone of a reputable app which will lead to discord account takeover if followed.
+  - Some of these servers tend to have vanity links.
+  - Almost all aggressively advertised NSFW servers will lead to a similar scam.
+images:
+  - path: ./images/nsfw-1.png
+    alt: screenshot of an example of a NSFW scam server with a fake vericiation flow and fake captcha bot
+  - path: ./images/nsfw-2.png
+    alt: screenshot of a fake captcha bot dashboard with a faked verification flow resulting in account takeover
+detection:
+  - type: regex
+    pattern: (\.gg|invite)/(.|\n)*(nude|cp|xx|nitro|leak|sex|porn|hot|job|slut|nsfw|teen|babe|cock|tiktok|girl|onlyfans|@everyone|@here|woman|women).*
+    explanation: Sometimes the invite comes before...
+  - type: regex
+    pattern: (nude|cp|xx|nitro|leak|sex|porn|hot|job|slut|nsfw|teen|babe|cock|tiktok|girl|onlyfans|@everyone|@here|woman|women)(.|\n)*(\.gg|invite)/
+    explanation: ...sometimes after the rest of the message. If there are too many false positives, consider adapting the terms.

@@ -8,57 +8,15 @@
     - https://openseasvxe.vercel.app
   notes:
     - A message enticing victims to follow a link to a fake crypto exchange. Following the displayed instructions results in the used wallet being drained.
-    - 'Common target: OpenSea'
+    - "Common target: OpenSea"
   images:
-    - path: ./images/early-mint-1.png
-      alt: screenshot of a fake OpenSea website clone instructing the victim to connect a wallet
+    - alt: screenshot of a fake OpenSea website clone instructing the victim to connect a wallet
+      path: ./images/early-mint-1.png
   detection:
     - type: automod-profile
-      pattern: '*announcement*'
-
-- id: 01K04CCVPRFS5WVTAJPVXBA6MD
-  name: support server
-  examples:
-    - |-
-      🔗💬 For clarification or guidance, consult the team directly☞  
-      <discord:/#@​​%64%69%73%63%6F%72%64%2E%67%67/%76%53%39%37%38%71%79%76%4B%74\>
-
-      ===================================================@​​.adambek#0
-  notes:
-    - ~~Link using html encoding which parses to an invite in the viewing client.~~
-    - The linked server usually features a support ticket bot and can be used for different followup scams (like crypto wallet draining, demanding payment, threats and account takeovers)
-  deprecation: Discord has changed the parsing engine and no longer accepts %-encoding in links, meaning they are not resolved and not clickable. 
-
-- id: 01K04CCVPRA719P170YZW3D28B
-  name: crypto giveaway
-  detection:
-    - type: regex
-      pattern: (?:(?:[1-5]|image)\.(?:jpg|png)[\s\S]*){2,}
-      explanation: Naming images 1/2/3/4/5.png or image.png is very uncommon. False positives may still happen in messages with image links, where the image hash ends with 1/2/3/4/5.
-    - type: automod
-      pattern: '*betfeeq*'
-      explanation: New variants include a link to a website instead of just referencing it in the screenshots.
-  notes:
-    - A message (often just with images) showing faked news articles about crypto casino giveaways, early mints or similar as well as faked proof of receiving credit in a crypto wallet.
-    - Variants with different stories and influencers as well as different looks for the fake casino exist.
-  images:
-    - path: ./images/fake-giveaway-1.png
-      alt: picture of a screen showing a faked twitter post by alleged mr beast (youtuber) about launching their own crypto casino giving away 2,500$ to everyone registering
-    - path: ./images/fake-giveaway-2.png
-      alt: picture of a screen showing "activate code" screen of a crypto casino
-    - path: ./images/fake-giveaway-3.png
-      alt: picture of a screen showing "successful withdrawal" pop-up with the crypto casino visible in the background
-    - path: ./images/fake-giveaway-4.png
-      alt: picture of a "successful withdrawal" pop-up with a phone screen showing the alleged payment in a crypto wallet
-    - path: ./images/fake-giveaway-5.png
-      alt: picture of a fake BBC article about a new challenge with a promo code to claim 4,000$ cash
-
+      pattern: "*announcement*"
 - id: 01K04CCVPRATQM3TMDT4J8PB7E
   name: free macbook
-  detection:
-    - type: regex
-      pattern: macbook .* (?:&|\+|and|with) .* charger
-      explanation: This scam is very explicit about giving away the macbook +/&/and/with a charger.
   examples:
     - Hello I want to give out my Southeast Technical institute MacBook 2020 & Charger** for free, it's in perfect health and good as new, alongside a charger so it's perfect, I want to give it out because I just got a new model from my uncle as a brithday present and I thought of giving out the old one go someone who can't afford one and is in need of it...Strictly First come first serve ! DM IF YUOU ARE INTERESTED
     - Hello everyone, I'm writing to offer my old Apple 2021 MacBook Pro 16-inch M1 and its charger for free. The device is in excellent condition and is practically new. I'm giving it away because I recently received a new model and thought it would be a great help to someone who might not be able to afford a new device. Please note that this offer is on a first-come, first-served basis. If you're interested, please send me a direct message.
@@ -67,10 +25,14 @@
     - Often comes with an attached image of a MacBook in a box or ready to be shipped
     - This will usually result in the scammer asking for up-front payment for shipping and import fees. After paying the victim is ghosted
   images:
-    - path: ./images/giveaway-mac-1.png
-      alt: photo of a macbook and charger in original packaging
-    - path: ./images/giveaway-mac-2.png
-      alt: photo of a macbook and charger in a shipping box
+    - alt: photo of a macbook and charger in original packaging
+      path: ./images/giveaway-mac-1.png
+    - alt: photo of a macbook and charger in a shipping box
+      path: ./images/giveaway-mac-2.png
+  detection:
+    - type: regex
+      pattern: macbook .* (?:&|\+|and|with) .* charger
+      explanation: This scam is very explicit about giving away the macbook +/&/and/with a charger.
 - id: 01K04CCVPR7W1HMFNKJPPYFSRN
   name: nsfw servers
   examples:
@@ -89,10 +51,10 @@
     - Some of these servers tend to have vanity links.
     - Almost all aggressively advertised NSFW servers will lead to a similar scam.
   images:
-    - path: ./images/nsfw-1.png
-      alt: screenshot of an example of a NSFW scam server with a fake vericiation flow and fake captcha bot
-    - path: ./images/nsfw-2.png
-      alt: screenshot of a fake captcha bot dashboard with a faked verification flow resulting in account takeover
+    - alt: screenshot of an example of a NSFW scam server with a fake vericiation flow and fake captcha bot
+      path: ./images/nsfw-1.png
+    - alt: screenshot of a fake captcha bot dashboard with a faked verification flow resulting in account takeover
+      path: ./images/nsfw-2.png
   detection:
     - type: regex
       pattern: (\.gg|invite)/(.|\n)*(nude|cp|xx|nitro|leak|sex|porn|hot|job|slut|nsfw|teen|babe|cock|tiktok|girl|onlyfans|@everyone|@here|woman|women).*
@@ -100,149 +62,38 @@
     - type: regex
       pattern: (nude|cp|xx|nitro|leak|sex|porn|hot|job|slut|nsfw|teen|babe|cock|tiktok|girl|onlyfans|@everyone|@here|woman|women)(.|\n)*(\.gg|invite)/
       explanation: ...sometimes after the rest of the message. If there are too many false positives, consider adapting the terms.
-
-- id: 01K04CCVPRJAD3FKKW1N734KTE
-  name: steam gift
-  examples:
-    - 50$ steam - [steamcommunity.com/gift/activation=TQZtfYnLuA](https://1url.cz/@TQZtfYnLuA) @everyone
-    - 🎁 STEAM GIVES THE GIFT - [steamcommunity.com/id=7349190725](https://u.to/PJFOIg) @everyone
-    - Steam gift 50$ - [steamcommunity.com/gift-card/pay/50](https://ln.run/FVjnhtEqPi )
-    - 'Free DISCORD nitro from STEAM link: https://clck.ru/qE7oR'
-    - |-
-      Gabe Newell here
-      Hello fellow members of this awesome community, I am Gaben aka Gabe Newell the CEO of steam. I would like to gift you all stea3mcomunity.cc/tradeoffer/new/?partner=1845962914731&token=aE4KwS8 thank you.
-      
-      -Sincerely, 
-      Gabe Newell
-    - |- 
-      steamcommunivty.com/gift-card/
-      staemcommun1ty.com/
-      steamticket-gift.com/
-      streamconmnumnlty.com/
-      seamcoommnunlty.com/
-  notes:
-    - A message promising steam credit for simply logging in through the link. This scam will result in a steam account takeover.
-    - Steam community look-alikes are usually hidden behind a link shortener (u.to, e.vg, etc.).
-    - In some variants the scammers claim to be or speak in the name of a steam co-founder, Gabe Newell.
-  detection:
-    - type: regex
-      pattern: \[.*steamcommunity.com.*\]\(.*\)
-      explanation: There is no reason why someone would use steamcommunity.com in the mask `[]` rather than the link `()` part, unless they are trying to mask malicious intent.
-    - type: regex
-      pattern: ([0-9oO]{2}[\$€] gift)|(gift [0-9oO]{2,}[\$€])
-      explanation: Focusing on the "50$" part of the message. Thread actors have started to replace the value of numbers with look-alike characters. This may still come in handy for those few scams not using masked links. Scammers stick to 50$ as the gift value pretty consistently.
-
-- id: 01K04CCVPRWB6NKGKY7GGPJ42Q
-  name: upwork proxy
+- id: 01K04CCVPRFS5WVTAJPVXBA6MD
+  name: support server
   examples:
     - |-
-      Hi, I'm looking for a reliable person with a verified freelance platform account (Upwork, Freelancer.) who can act as the client-facing side of a small business.
+      🔗💬 For clarification or guidance, consult the team directly☞
+      <discord:/#@​​%64%69%73%63%6F%72%64%2E%67%67/%76%53%39%37%38%71%79%76%4B%74\>
 
-      💼 I handle all the work (writing/design/coding/AI/prompt engineering — details on request)
-
-      ✅ You:
-      Have a verified freelance account or online payment profile
-      Can communicate with clients or accept payments
-      Are reliable and open to a fair, ongoing deal
-
-      💰 I offer:
-      You keep 10–15% of every project/payment
-      Everything documented clearly
-      Starting small with a test project (low risk)
-
-      🔐 This is legal freelance work — no shady stuff.
-      🧠 Long-term potential if it works well.
-
-      DM me if you’re interested or want to know more.
-
-      ⭐⭐⭐⭐⭐
-    - |-
-      Hello, @​everyone
-      I hope you're doing well.
-      Im a full-stack developer with 7+ years exp.
-      My main stack are PHP (Laravel), ASP.NET, .NET, C#, React, AngularJS, Android.
-      Im looking for someone to assist me long-term.
-      I need pc(or vm) and acc(upwork & freelancer) that be able to share.
-      If join, I'll offer 10 ~ 15% of my income or fixed profit monthly
-      Profit depends on your local.
-      But only American(US, canada, mexico, argentina, brazil, colombia,...) or European and able to verify.
-      and then 22+ years old, male.
-      not upfront,most of the upfront are scam.
-    - |-
-      I am looking for someone to lend my Upwork freelance account in the US, South America and Europe. I am looking for someone to work with me long term. I will pay 10-20% of my income to anyone who wants to work with me. If you have a good knowledge of the program and are fluent in English, I will give you an additional 10% bonus. please send me DM.
+      ===================================================@​​.adambek#0
   notes:
-    - Scammers claim to be looking for someone with a US/EU upwork account to share revenue with. Scammers then use the shared account to commit fraud in the name of the victim.
-    - This can result in major legal trouble. Upwork and similar platform accounts should never be shared.
-
-- id: 01K04CCVPRJXMKNPBAE1TWEED8
-  name: wrong slash
+    - ~~Link using html encoding which parses to an invite in the viewing client.~~
+    - The linked server usually features a support ticket bot and can be used for different followup scams (like crypto wallet draining, demanding payment, threats and account takeovers)
+  deprecation: Discord has changed the parsing engine and no longer accepts %-encoding in links, meaning they are not resolved and not clickable.
+- id: 01K04CCVPRA719P170YZW3D28B
+  name: crypto giveaway
   notes:
-    - Discord renders invites although they use the wrong slash (`discord.com/invite\abdcdef` instead of `discord.com/invite/abcdef`)
-    - This may be used by spammers and scammers to bypass simple invite patterns and spread all sorts of scam servers.
+    - A message (often just with images) showing faked news articles about crypto casino giveaways, early mints or similar as well as faked proof of receiving credit in a crypto wallet.
+    - Variants with different stories and influencers as well as different looks for the fake casino exist.
+  images:
+    - alt: picture of a screen showing a faked twitter post by alleged mr beast (youtuber) about launching their own crypto casino giving away 2,500$ to everyone registering
+      path: ./images/fake-giveaway-1.png
+    - alt: picture of a screen showing "activate code" screen of a crypto casino
+      path: ./images/fake-giveaway-2.png
+    - alt: picture of a screen showing "successful withdrawal" pop-up with the crypto casino visible in the background
+      path: ./images/fake-giveaway-3.png
+    - alt: picture of a "successful withdrawal" pop-up with a phone screen showing the alleged payment in a crypto wallet
+      path: ./images/fake-giveaway-4.png
+    - alt: picture of a fake BBC article about a new challenge with a promo code to claim 4,000$ cash
+      path: ./images/fake-giveaway-5.png
   detection:
+    - type: regex
+      pattern: (?:(?:[1-5]|image)\.(?:jpg|png)[\s\S]*){2,}
+      explanation: Naming images 1/2/3/4/5.png or image.png is very uncommon. False positives may still happen in messages with image links, where the image hash ends with 1/2/3/4/5.
     - type: automod
-      pattern: '*invite\*'
-      explanation: Nobody legitimate uses the wrong slash when posting invites. If used, at least the intent of bypassing filters can be assumed.
-
-- id: 01K0ARRPJF7HF5V4V4Y2KE1D3F
-  name: bookmarklet
-  notes:
-    - The victim is asked to drag a button/link into their bookmarks and click on it when visiting discord/steam/legitimate page. Doing so executes embedded scripts and will usually result in account takeover.
-    - 'This scam uses [bookmarklets](<https://en.wikipedia.org/wiki/Bookmarklet>), bookmarks with embedded javascript.'
-    - On inspection, the link will be very long and look very suspicious with URL encoded embedded scripts.
-  images:
-    - path: ./images/bookmarklet-1.png
-      alt: Screenshot showing a link posted by a reputable bot through abusing its custom message feature leading to a fake verification page. Below, a scammer explains the procedure of dragging the button to the bookmark bar and activating it while visiting discord.
-    - path: ./images/bookmarklet-2.png
-      alt: The bookmarklet link (a very long, suspicious looking link with URL encoded characters).
-
-- id: 01K0BY134G66MZC3AWT34CQ3Y7
-  name: accidental report
-  notes:
-    - Victim is made to believe that their account was accidentally reported and told to reach out to a scammer impersonating support staff to resolve the issue. If followed, this will usually result in account takeover by convincing the victim to change their email address associated to the account to a scammer-controlled address.
-    - Variants exist where scammers ask for payment to resolve the report instead
-    - The scam is often accompanied by faked screenshots of reports, emails, certificates (built from information obtained from employee linkedin profiles)
-    - Steam or other service variants are less common but also possible
-  images:
-    - path: ./images/accidental-report-1.png
-      alt: Screenshot showing a fake report update email and the initial attacker story of allegedly accidentally spam reporting the victim
-    - path: ./images/accidental-report-2.png
-      alt: Screenshot of the discord profile of a scammer impersonating discord staff stating they are a "report assistant"
-    - path: ./images/accidental-report-3.png
-      alt: Screenshot showing a fake accidental report for activities along with a customized request update email asking to contact a scammer impersonating staff
-
-- id: 01K0CBXYB0DK999W3B9BMT1W7K
-  name: freeware
-  detection:
-    - pattern: tradingview premium
-      type: automod
-      explanation: Tradingview Premium is the most common target for this scam. In most communities not centered around investment, blocking this should have minimal impact on day-to-day conversations.
-  notes:
-    - Scammer posts a link to an external source (usually reddit) including download links and fake feedback/support conversations. The download includes [RAT](<https://en.wikipedia.org/wiki/Remote_desktop_software#RAT>)s or info stealers.
-    - This scam usually targets crypto and trading software impersonation.
-  examples:
-    -  'TradingView Premium Full Free version (Windows + MacOs): https://www.reddit.com/r/---/comments/---/'
-  images:
-    - path: ./images/freeware-1.png
-      alt: Screenshot of a reddit post showing the downloag to alleged free version of software
-    - path: ./images/freeware-2.png
-      alt: Screenshot of the reddit support and feedback thread trying to make the download look more legit
-
-- id: 01K0EERJADFE7P3454JD1TPDR9
-  name: help to earn
-  detection:
-    - pattern: earn(?:ing)? \$\d?\d0k
-      type: regex
-  notes:
-    - Scammer promises to help the victim earn large amounts of money in a short timeframe for taking a low cut. Usually this will result in the scammer asking the victim to transfer money into some account they have agency over and the scammer eventually withdrawing the money and ghosting the victim.
-    - Usually tries to lure the victim to a direct message on a more anonymous service like telegram
-  examples:
-    - |- 
-      I'll help the first 10 people interested on how to  start earning $100k or more within a week, but you will reimburse me 10% of your profits when you receive it. Note: only interested people should send a friend request or send me a dm! ask me (HOW) via Telegram username @---
-
-      Or The telegram link in my bio
-    - |-
-      I'll help anyone interested in how to earn $30k within 3 days and hours but you will reimburse me 10% of your dividend when you collect it. Note: only interested people should send a friend request
-    - |-
-      i will help ten people trade and earn $40k but i will take ten percent from your first profit use the telegram link in my bio let begin if interested by asking how
-
+      pattern: "*betfeeq*"
+      explanation: New variants include a link to a website instead of just referencing it in the screenshots.

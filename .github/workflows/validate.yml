@@ -1,0 +1,21 @@
+name: Validate
+on: [push, pull_request]
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 24
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build and validate
+        run: pnpm validate
+        env:
+          FORCE_COLOR: "true"
