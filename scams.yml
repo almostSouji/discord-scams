@@ -42,6 +42,19 @@
     - type: automod
       pattern: "@everyone, @here"
       explanation: Recent versions of the scam always try to mention everyone or here. Consider letting trusted members bypass this rule, if there are valid use cases for the pings in your servers.
+- id: 01KQVW7ZF1TBAARNE97KF7S4PA
+  name: whatsapp market signals
+  examples:
+    - Hello everyone! Our moderators have established a community that new members can join completely free of charge. We share daily stock market news and curated stock recommendations. We also provide market forecasts; if you are interested, you are welcome to join our community to receive the latest stock signals. (Once you have joined, please contact an administrator to gain free access to our VIP section.)https://chat.whatsapp.com/IahPJTfiT0MBBzfoVmLfnR
+  notes:
+    - Advertising a whatsapp group for market signals
+    - Scammers may re-try sending this without the chat link, if unsucessful
+  detection:
+    - type: automod
+      pattern: "@everyone, @here"
+      explanation: Some versions of this scam try to mention everyone and here.
+    - type: other
+      explanation: Use any trigger words in the message that aren't prone to false positives in your context.
 - id: 01K04CCVPR7W1HMFNKJPPYFSRN
   name: nsfw servers
   examples:
