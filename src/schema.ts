@@ -30,7 +30,7 @@ export const LocalImage = z.object({
 });
 
 export const PatternDetection = z.object({
-	type: z.literal(["automod", "automod-profile", "other"]),
+	type: z.literal(["automod", "automod-profile"]),
 	pattern: z.string(),
 	explanation: z.string().optional(),
 });
@@ -53,12 +53,24 @@ export const RegexDetection = z.object({
 	explanation: z.string().optional(),
 });
 
+export const CustomDetectionOptionalExplanation = z.object({
+	type: z.literal(["other"]),
+	pattern: z.string(),
+	explanation: z.string().optional(),
+})
+
+export const CustomDetectionOptionalPattern = z.object({
+	type: z.literal(["other"]),
+	pattern: z.string().optional(),
+	explanation: z.string(),
+})
+
 export const Scam = z.object({
 	id: z.ulid(),
 	name: z.string(),
 	examples: z.array(z.string()).optional(),
 	notes: z.array(z.string()).optional(),
 	images: z.array(z.xor([LocalImage, OnlineImage])).optional(),
-	detection: z.array(z.xor([RegexDetection, PatternDetection])).optional(),
+	detection: z.array(z.xor([RegexDetection, PatternDetection, CustomDetectionOptionalExplanation, CustomDetectionOptionalPattern])).optional(),
 	deprecation: z.string().optional(),
 });

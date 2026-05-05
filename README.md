@@ -25,6 +25,12 @@ alt: Alternative text describing the image
 type: regex|profile-regex|automod|automod-profile|other
 pattern: Pattern used for detection
 explanation (optional): Explanation for why the pattern is effective
+
+# Custom Detection
+type: other
+pattern (optional*): Pattern used for detection
+explanation (optional*): Explanation for why the pattern is effect/what to do that does not fit a pattern-based approach
+# * either pattern or explanation have to be present
 ```
 
 The format is formally desrcibed in `src/schema.ts` and validated via CI and pre-commit hooks. Either executing will also generate `scams.yml` as a combination of all individual files in the `scams` folder.
