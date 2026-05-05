@@ -5,15 +5,11 @@ examples:
     🔞𝗙𝗿𝗲𝗲 𝗻𝘂𝗱𝗲𝘀 𝗳𝗼𝗿 𝘆𝗼𝘂:
     https://discord.gg/abcdefg
     @everyone @everyone
-  - |-
-    Free 18+ Teen Content + Latina Nudes + Hentai + Onlyfans leaks 🔞🍒
-    https://discord.gg/abcdefg @everyone
-  - |-
-    Join for the best NSFW content and teen leaks 🍑👇
-    https://discord.gg/TeeN-leakz @everyone
+  - omg join girl in cam discord.gg/SFrPyYWVPQ
+  - Check my bio 😁
 notes:
   - Invite to a NSFW community. The linked server has a fake verification flow including a visual clone of a reputable app which will lead to discord account takeover if followed.
-  - Some of these servers tend to have vanity links.
+  - Some of these servers have vanity links.
   - Almost all aggressively advertised NSFW servers will lead to a similar scam.
 images:
   - path: ./images/nsfw-1.png
@@ -27,3 +23,6 @@ detection:
   - type: regex
     pattern: (nude|cp|xx|nitro|leak|sex|porn|hot|job|slut|nsfw|teen|babe|cock|tiktok|girl|onlyfans|@everyone|@here|woman|women)(.|\n)*(\.gg|invite)/
     explanation: ...sometimes after the rest of the message. If there are too many false positives, consider adapting the terms.
+  - type: automod
+    pattern: check my bio, girl in cam, shes on cam, sexcam
+    explanation: invites may be advertised via the user's bio

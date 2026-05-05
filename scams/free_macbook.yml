@@ -4,12 +4,20 @@ detection:
   - type: regex
     pattern: macbook .* (?:&|\+|and|with) .* charger
     explanation: This scam is very explicit about giving away the macbook +/&/and/with a charger.
+  - type: automod
+    pattern: "@everyone, @here"
+    explanation: Recent versions of the scam always try to mention everyone or here. Consider letting trusted members bypass this rule, if there are valid use cases for the pings in your servers.
 examples:
   - Hello I want to give out my Southeast Technical institute MacBook 2020 & Charger** for free, it's in perfect health and good as new, alongside a charger so it's perfect, I want to give it out because I just got a new model from my uncle as a brithday present and I thought of giving out the old one go someone who can't afford one and is in need of it...Strictly First come first serve ! DM IF YUOU ARE INTERESTED
   - Hello everyone, I'm writing to offer my old Apple 2021 MacBook Pro 16-inch M1 and its charger for free. The device is in excellent condition and is practically new. I'm giving it away because I recently received a new model and thought it would be a great help to someone who might not be able to afford a new device. Please note that this offer is on a first-come, first-served basis. If you're interested, please send me a direct message.
+  - |-
+    Hello @everyone, I’m giving away my Sony ZV-E10 camera along with the 18–105mm f4 lens for free, both in their original boxes and in nearly brand-new condition. I purchased them during Christmas 2023 but only used them for a few test shoots before keeping them stored. Since I recently got a drone, I decided to pass these on to someone who truly needs a camera but may not be able to afford one.
+
+    This is strictly on a first-come, first-served basis.
+    IF YOU ARE INTERESTED DM.
 notes:
-  - Message of someone claiming to give away an older MacBook because they got a new model and want to give it to someone unable to afford their own device.
-  - Often comes with an attached image of a MacBook in a box or ready to be shipped
+  - Message of someone claiming to give away old tech because they got a new model and want to give it to someone unable to afford their own device.
+  - Often comes with an attached image of the device in a box or ready to be shipped
   - This will usually result in the scammer asking for up-front payment for shipping and import fees. After paying the victim is ghosted
 images:
   - path: ./images/giveaway-mac-1.png

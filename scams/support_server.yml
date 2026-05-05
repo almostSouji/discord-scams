@@ -2,11 +2,13 @@ id: 01K04CCVPRFS5WVTAJPVXBA6MD
 name: support server
 examples:
   - |-
-    🔗💬 For clarification or guidance, consult the team directly☞
-    <discord:/#@​​%64%69%73%63%6F%72%64%2E%67%67/%76%53%39%37%38%71%79%76%4B%74\>
-
-    ===================================================@​​.adambek#0
+    ASK here Please 0P£N-A-TlCk£T\n\n> ><ht\n> tp\n> s\n> :////\\\\@@di\n> sco\n> rd.\n> gg/znEMJZZGN4>>
 notes:
+  - The advertised server usually features a support ticket bot and can be used for different followup scams (like crypto wallet draining, demanding payment, threats and account takeovers)
   - ~~Link using html encoding which parses to an invite in the viewing client.~~
-  - The linked server usually features a support ticket bot and can be used for different followup scams (like crypto wallet draining, demanding payment, threats and account takeovers)
-deprecation: Discord has changed the parsing engine and no longer accepts %-encoding in links, meaning they are not resolved and not clickable.
+  - While Discord keeps updating the parser to prevent these, scammers continuously find new combinations.
+detection:
+  - type: automod
+    pattern: >-
+      *//\\*
+

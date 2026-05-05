@@ -26,7 +26,7 @@ type: regex|profile-regex|automod|automod-profile|other
 pattern: Pattern used for detection
 explanation (optional): Explanation for why the pattern is effective
 
-# Custom Detection
+# Detection
 type: other
 pattern (optional*): Pattern used for detection
 explanation (optional*): Explanation for why the pattern is effect/what to do that does not fit a pattern-based approach
