@@ -1,0 +1,8 @@
+#
+#   Refer for explanation to following link:
+#   https://lefthook.dev/configuration/
+#
+pre-commit:
+  jobs:
+    - run: pnpm validate
+    - run: git add scams.yml
