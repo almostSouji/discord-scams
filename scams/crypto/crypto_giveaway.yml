@@ -9,6 +9,10 @@ detection:
     explanation: "Optical Character Recognition: `cryptocurrency casino`, `reward received`, `receive usdt`"
   - type: other
     explanation: Consider using perceptual hashing approaches. The images are not identical but very similar.
+  - type: regex
+    pattern: (?:(?:\d{1,3}|image|untitled)\.(?:jpg|png|jpeg|webp|gif)[\s\S]*){3,}
+    explanation: A variant of the scam uses the discord CDN to host the images. Some variations attach a random string to the message to bypass content duplicate detection.
+    
 images:
   - path: ./images/crypto-casino-1.jpg
     alt: picture of a screen showing a faked twitter post by alleged mr beast (youtuber) about launching their own crypto casino giving away a large amount of money to everyone registering
